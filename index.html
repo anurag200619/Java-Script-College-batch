@@ -4,25 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(36, 54, 79);
+        }
+        #box1 {
+            background-color: lavenderblush;
+            text-align: center;
+            font-weight: bolder;
+            color: rgb(36, 54, 79);
+            font-size: 30px;
+            padding-top: 15px;
+            border-radius: 5px;
+            height: 421px;
+            width: 377px;
+            margin-left: 487px;
+            margin-top: 120px;
+            
+        }
+
+        #box2 {
+            background-color: rgb(164, 196, 214);
+            text-align: left;
+            margin: 15px;
+            font-size: 16px;
+            padding: 9px 15px 22px 15px;
+            height: 2px;
+            border-radius: 3px;
+            font-weight: bolder;
+        }
+
+        p {
+            font-size: 17px;
+            text-align: left;
+            margin-left: 15px;
+            font-weight: lighter;
+        }
+
+        #que {
+            font-weight: 600;
+            font-size: 19px;
+        }
+
+        #box3 {
+            background-color: rgb(150, 179, 205);
+            /* text-align: center; */
+            /* font-weight: bolder; */
+            /* color: rgb(36, 54, 79); */
+            font-size: 13px;
+            /* padding-top: 15px; */
+            /* border-radius: 5px; */
+            height: 15px;
+            width: 200px;
+            /* margin-left: 350px; */
+            /* margin-top: 120px; */
+        }
+
+        .one {
+            height: 30px;
+            font-size: 11px;
+            width: 345px;
+            text-align: left;
+            border-radius: 4px;
+            
+        }
+
+        #two {
+            height: 30px;
+            font-size: 11px;
+            width: 345px;
+            text-align: left;
+            border-radius: 4px;
+            margin-top: 35px;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 12px;
+            background-color: rgb(29, 44, 66);;
+        }
+    </style>
 </head>
 <body>
-    <script src="index.js">
-        // console.log("hehehe");
-        // console.error("error")
-        // console.warn("hello")
-        // console.log(5==5)
-        // console.log(5=5)
-        // console.log(5+5)
-        // console.log(5+'5')
-        // console.log(5-5)
-        // console.log(5-'5')
-        // console.log(null+"hii")
-        // console.log(undefined+undefined)
-        // console.log(1+2+'2')
-        // console.log(typeof (typeof(5)) )
-        //  let score=100
-        //  let to=score==100
-        //  console.log(to)
-    </script>
+    <div id="box1">Quiz Time!
+        <div id="box2">Score:0</div>
+            <p>Question 1 of 5</p>
+            <p id="que">1. HTML ka full form kya hai?</p>
+            <button type="submit" class="one">Hyper Text Markup Language</button>
+            <br>
+            <button type="submit" class="one">High Text Machine Language</button>
+            <br>
+            <button type="submit" class="one">Hyper Text Machine Language</button>
+            <br>
+            <button type="submit" class="one">Hyper tabular Machine Language</button>
+            <button type="submit" id="two">Next Question</button>
+        </div>
 </body>
 </html>

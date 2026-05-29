@@ -1,0 +1,20 @@
+.Cart:hover {
+        border: 2px solid black;
+    }
+    .Cart {
+        background-color: rgb(142, 253, 142);
+        border: none;
+        padding: 5px 20px;
+        font-size: small;
+        border-radius: 10px;
+        
+    }
+
+    .wish {
+        padding: 5px 30px;
+        font-size: small;
+        font-weight: 525;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: 5px;
+    }

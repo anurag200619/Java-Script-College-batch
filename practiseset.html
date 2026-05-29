@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="practiseset.css">
+<body>
+    <button class="Cart" onclick="cartqnt++;
+    document.querySelector('#abc').
+        innerText = `Your Cart has ${cartqnt} items`;"
+    >Add to Cart</button>
+
+     <button class="wish" onclick="cartqnt--;
+    document.querySelector('#abc').
+        innerText = `Your Cart has ${cartqnt} items`;"
+        >❤️WISHLIST</button>
+
+     <button class="Cart" onclick="cartqnt=cartqnt+2;
+    document.querySelector('#abc').
+        innerText = `Your Cart has ${cartqnt} items`;"
+        >Add 1+1 to Cart</button>
+
+     <h1 id="abc"></h1>
+    <script>
+        let cartqnt = 0;
+        document.querySelector('#abc').
+        innerText = `Your Cart has ${cartqnt} items`;
+    </script>
+</body>
+</html>
