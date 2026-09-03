@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="project.css">
+<body>
+    <button class="Add" onclick="
+        Cartqnt+=1;
+        document.querySelector('#Cart-Summary').
+        innerText = `Your Cart has ${Cartqnt} items`;
+        ">Add To Cart</button>
+
+    <button class="Wishlist" onclick="
+    if(Cartqnt>=1){
+        Cartqnt=Cartqnt-=1;
+        document.querySelector('#Cart-Summary').
+            innerText = `Your Cart has  ${Cartqnt} items`;
+    }
+        
+    ">MOVE TO ❤️WISHLIST</button>
+
+    <button class="Add" onclick="
+    Cartqnt=Cartqnt+=2;
+    document.querySelector('#Cart-Summary').
+        innerText = `Your Cart has ${Cartqnt} items`;
+    ">Add 1+1 To Cart</button>
+
+    <h1 id="Cart-Summary"></h1>
+
+    <script>
+        let Cartqnt = 0;
+        document.querySelector('#Cart-Summary').
+        innerText = `Your Cart has ${Cartqnt} items`;
+        if(Cartqnt<0){
+            Cartqnt=0;
+        }
+    </script>
+
+</body>
+</html>

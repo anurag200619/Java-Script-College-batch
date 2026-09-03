@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+</head>
+<link rel="stylesheet" href="Cricketgame.css">
+<body>
+    <div id="game">
+        <h1>Cricket (Bat Ball Stump Game)</h1>
+        <button class="butt" onclick=" 
+        let Computerdecesion=getComputerdecesion();
+        let result=getresult('Bat',Computerdecesion);
+        showresult('Bat',Computerdecesion,result);
+
+        "><img src="bat.png" alt="Bat image" class="choice-image">
+        </button>
+
+        <button class="butt" onclick="
+         Computerdecesion=getComputerdecesion();
+         result=getresult('Ball',Computerdecesion);
+         showresult('Ball',Computerdecesion,result);
+
+        "><img src="ball.png" alt="Ball image" class="choice-image"></button>
+
+        <button class="butt" onclick="
+         Computerdecesion=getComputerdecesion();
+         result=getresult('Stump',Computerdecesion);
+         showresult('Stump',Computerdecesion,result);
+
+        "><img src="stump.png" alt="stump image" class="choice-image"></button>
+
+<h3 id="user-move"></h3>
+<h3 id="computer-move"></h3>
+<h3 id="result"></h3>
+<h3 id="score"></h3>
+
+        <button class="reset" onclick="
+        localStorage.clear();
+        resetScore();
+        ">Reset</button>
+
+
+
+        <button class="reset" onclick= "document.querySelector('#ruleset').
+        innerText = `#  HOW TO PLAY (RULESET) .
+        
+        1. User Choose one option between BAT BALL And STUMPS.
+
+        2. Computer Randomly Choose one between BAT BALL And STUMPS.
+
+        3. How Winner is decided --
+
+              a. Bat will win over Ball but lose to Stump.
+
+              b. Ball will win over stump but lose to Bat.
+
+              c. stump will win over Bat but lose to ball.
+
+        4. Based on user choice and computer choice winner will be declared.
+        
+        5. If both user and computer choice is same then the result will be a tie.`;">Rules</button>
+        <h1 id="ruleset"></h1>
+
+        <br>
+        
+    <button class="reset" onclick="document.querySelector('#ruleset').
+        innerText = ` `;">Back</button>
+        <h1 id="ruleset"></h1>
+
+    
+    <script>
+        let scorestr = localStorage.getItem('score');
+        let score;
+        resetScore(scorestr);
+        
+        function resetScore(scorestr){
+            
+            score=scorestr ? JSON.parse(scorestr) : {
+                User : 0,
+                computer : 0,
+                tie : 0,
+            };
+            // if(scorestr !== undefined){
+                //     score = JSON.parse(scorestr);
+                // }
+                // else {
+                    //     score = {
+                        //         User : 0,
+                        //         computer : 0,
+                        //         tie : 0,
+                        //     };
+                        // }
+                        
+                        score.displayscore = function(){
+                return `Score  =  You : ${score.User} , Computer : ${score.computer} , Tie : ${score.tie}`;
+            };
+
+            showresult();
+        }
+
+        
+        function getComputerdecesion() {
+            let randomnumber = Math.random()*3;
+
+        if(randomnumber>0 && randomnumber<=1) {
+            return 'Bat';
+        }
+    
+        else if(randomnumber>1 && randomnumber<=2) {
+              return 'Ball';
+        }
+    
+        else {
+               return 'Stump';
+        }
+    }
+
+    function getresult(usermove,computermove){
+        if(usermove===computermove){
+            score.tie++;
+            return `It's a tie`;
+        }
+
+        else if(usermove==='Bat'){
+            if(computermove==='Ball'){
+                score.User++;
+                return 'You won';
+            }
+
+            else if(computermove==='Stump'){
+                score.computer++;
+                return 'Computer won';
+            }
+        }
+
+        else if(usermove==='Ball'){
+            if(computermove==='Bat'){
+                score.computer++;
+                return 'Computer won';
+            }
+
+            else if(computermove==='Stump'){
+                score.User++;
+                return 'You won';
+            }
+        }
+
+        else{
+            if(computermove==='Ball'){
+                score.computer++;
+                return 'Computer won';
+            }
+
+            else if(computermove==='Bat'){
+                score.User++;
+                return 'You won';
+            }
+        }
+    }
+
+    function showresult(usermove,computermove,result){
+        localStorage.setItem('score',JSON.stringify(score));
+
+        document.querySelector('#user-move').innerText = usermove ? `USERCHOICE : You have choose ${usermove}
+        
+        ` : '';
+        
+        document.querySelector('#computer-move').innerText = computermove ? `COMPUTERCHOICE : Computer has choose ${computermove}
+        
+        ` : '';
+
+
+        document.querySelector('#result').innerText = result ? `RESULT : ${result}
+        
+        ` : '';
+
+
+        document.querySelector('#score').innerText = `${score.displayscore()}
+        
+         `;
+
+    }
+    
+    </script>
+</body>
+</html>
